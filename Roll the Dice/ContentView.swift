@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var randomValue = 0
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Dice Toss")
+                .font(.title)
+                .padding()
+            Text("\(randomValue)")
+                .font(.system(size: 72))
+                .padding()
+            Button("Roll") {
+                randomValue = Int.random(in: 1...6)
+            }
+            Spacer()
+            
+        }
     }
 }
 
